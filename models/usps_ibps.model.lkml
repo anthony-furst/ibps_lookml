@@ -1,4 +1,4 @@
-connection: "ibps"
+connection: "bigquery_ibps_dataset"
 
 ## This model is for demonstration only, meaning it's not designed or tested for the demands of a live, production environment
 
