@@ -1,5 +1,5 @@
 view: derived_salaries_benefits {
-  sql_table_name: `usps-demo-421820.ibps.derived_salaries_benefits` ;;
+  sql_table_name: `ibps.derived_salaries_benefits` ;;
 
 
 dimension: Primary_key {

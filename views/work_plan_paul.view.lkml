@@ -5,7 +5,7 @@ view: work_plan_paul {
 
   derived_table: {
     sql: with splitWeeks as (
-        select distinct cal.accounting_period, cal.split_week_number, cal.fiscal_year_month, min(cal.calendar_day) as first_day_of_split_week from  `usps-demo-421820.ibps.calendar_t` cal
+        select distinct cal.accounting_period, cal.split_week_number, cal.fiscal_year_month, min(cal.calendar_day) as first_day_of_split_week from  `ibps.calendar_t` cal
         group by 1, 2, 3
       )
       select
@@ -16,11 +16,11 @@ view: work_plan_paul {
       , fNo.finance_number_name, fNo.finance_number_type , fNo.function_distribution_code , fNo.function_distribution_name , fNo.hierarchy_id lead_finance_number
       , fNo.lead_finance_number_name , fNo.pricing_group_number , fNo.reporting_group_code
       , function.function_name
-      from `usps-demo-421820.ibps.work_hour_plan_t` plan
+      from `ibps.work_hour_plan_t` plan
       left join splitWeeks cal on plan.split_week_number = cal.split_week_number
-      left join `usps-demo-421820.ibps.labor_distribution_t` ldc on plan.labor_distribution_code = ldc.labor_distribution_code
-      left join `usps-demo-421820.ibps.finance_number_t` fNo on plan.finance_number = fNO.finance_number
-      left join `usps-demo-421820.ibps.function_t` function on ldc.function_code = function.function_code
+      left join `ibps.labor_distribution_t` ldc on plan.labor_distribution_code = ldc.labor_distribution_code
+      left join `ibps.finance_number_t` fNo on plan.finance_number = fNO.finance_number
+      left join `ibps.function_t` function on ldc.function_code = function.function_code
       ;;
   # datagroup_trigger:usps_ibps_default_datagroup
   }

@@ -1,5 +1,5 @@
 view: d_expenses_salaries {
-  sql_table_name: `usps-demo-421820.ibps.d_expenses_salaries` ;;
+  sql_table_name: `ibps.d_expenses_salaries` ;;
 
   dimension: area_region_code {
     type: string
