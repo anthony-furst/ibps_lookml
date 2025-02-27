@@ -226,7 +226,7 @@ work_hour_first AS (
     INNER JOIN (
         SELECT
             *,
-            ROW_NUMBER() OVER (PARTITION BY fiscal_year, function_code, labor_distribution_code ORDER BY last_update_date_time_x DESC) AS row_num
+            ROW_NUMBER() OVER (PARTITION BY fiscal_year, function_code, labor_distribution_code ORDER BY last_update_date_time DESC) AS row_num
         FROM `ibps.labor_distribution_t`
     ) ld ON whp.fiscal_year = ld.fiscal_year
     AND whp.function_code = ld.function_code

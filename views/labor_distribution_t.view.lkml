@@ -35,10 +35,10 @@ view: labor_distribution_t {
     type: string
     sql: ${TABLE}.labor_distribution_name ;;
   }
-  dimension_group: last_update_date_time_x {
+  dimension_group: last_update_date_time {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
-    sql: ${TABLE}.last_update_date_time_x ;;
+    sql: ${TABLE}.last_update_date_time ;;
   }
   dimension_group: last_update_date_time_y {
     type: time
